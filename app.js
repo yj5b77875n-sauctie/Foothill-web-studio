@@ -51,12 +51,20 @@
   let idx = 0;
   let timer;
 
+  let filter = 'all';
+  const visibleSlides = () => slides.filter((s) => filter === 'all' || s.dataset.cat === filter);
+
   const show = (n) => {
-    idx = (n + slides.length) % slides.length;
-    slides.forEach((s, i) => s.classList.toggle('is-active', i === idx));
+    const visible = visibleSlides();
+    if (!visible.length) return;
+    idx = (n + visible.length) % visible.length;
+    const active = visible[idx];
+    slides.forEach((s) => s.classList.toggle('is-active', s === active));
     dots.forEach((d, i) => {
-      d.classList.toggle('is-active', i === idx);
-      d.setAttribute('aria-pressed', String(i === idx));
+      const on = slides[i] === active;
+      d.classList.toggle('is-active', on);
+      d.setAttribute('aria-pressed', String(on));
+      d.classList.toggle('is-dot-hidden', filter !== 'all' && slides[i].dataset.cat !== filter);
     });
   };
 
@@ -81,6 +89,22 @@
     const dx = e.changedTouches[0].clientX - startX;
     if (Math.abs(dx) > 40) { show(idx + (dx < 0 ? 1 : -1)); auto(); }
   });
+
+  const filterRow = document.querySelector('[data-work-filter]');
+  if (filterRow) {
+    filterRow.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-filter]');
+      if (!btn) return;
+      filter = btn.dataset.filter;
+      filterRow.querySelectorAll('[data-filter]').forEach((b) => {
+        const on = b === btn;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-pressed', String(on));
+      });
+      show(0);
+      auto();
+    });
+  }
 
   auto();
 })();
@@ -203,5 +227,215 @@ function handleContact(e) {
       const r = b.getAttribute('data-region-btn');
       apply(r, { persist: true });
     });
+  });
+})();
+
+// ---- Hero business picker — componentry.dev / 21st.dev style ----
+(function () {
+  const picker = document.querySelector('[data-picker]');
+  if (!picker) return;
+  const samples = {
+    contractor: { title: 'No Limit Muffler — Roseville', desc: 'Custom fabrication, exhaust and welding. See the work, get a quote, call the shop.', tags: ['Custom fab', 'Exhaust', 'Quote form'], cta: 'Get a quote' },
+    cabinets: { title: 'Chix Cabinets — Roseville', desc: 'Custom cabinets, 3D designs, in-home measuring. Pick a finish, book the showroom.', tags: ['White Shaker', '3D design', 'Book a visit'], cta: 'Book an appointment' },
+    restaurant: { title: 'Night Cap — Placer County', desc: 'Food & wine bar. Search the menu, request a table in under a minute.', tags: ['Live menu', 'Book a table', 'Private events'], cta: 'Book a table' },
+  };
+  const titleEl = picker.querySelector('[data-sample-title]');
+  const descEl = picker.querySelector('[data-sample-desc]');
+  const tagsEl = picker.querySelector('[data-sample-tags]');
+  const ctaEl = picker.querySelector('[data-sample-cta]');
+  picker.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-biz]');
+    if (!btn || !samples[btn.dataset.biz]) return;
+    picker.querySelectorAll('[data-biz]').forEach((b) => {
+      const on = b === btn;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-pressed', String(on));
+    });
+    const s = samples[btn.dataset.biz];
+    titleEl.textContent = s.title;
+    descEl.textContent = s.desc;
+    tagsEl.innerHTML = s.tags.map((t) => '<span>' + t + '</span>').join('');
+    ctaEl.textContent = s.cta;
+  });
+})();
+
+// ---- Tier quiz — BKLit UI style ----
+(function () {
+  const quiz = document.querySelector('[data-quiz]');
+  if (!quiz) return;
+  const results = {
+    fix: 'Mobile Rescue — $597 flat. Targeted fixes to your existing site, up to 3 improvements, about a week.',
+    refresh: 'Refresh — $1,297 flat. Same URL, brand-new site. 5 pages, photography and copy polish.',
+    new: 'New Build — $2,497 flat. A brand-new custom site from scratch, up to 8 pages, logo polish, SEO.',
+    booking: 'Website + Booking — $3,997 flat. New Build plus online booking, payments, and email flows.',
+    app: 'Website + Custom App — from $8,997. A public site paired with a real custom app, scoped per project.',
+  };
+  let monthly = false;
+  const out = quiz.querySelector('[data-quiz-out]');
+  const render = () => {
+    const site = quiz.querySelector('[data-quiz-q="site"]').value;
+    const booking = quiz.querySelector('[data-quiz-q="booking"]').value;
+    const app = quiz.querySelector('[data-quiz-q="app"]').value;
+    let key = 'new';
+    if (app === 'yes') key = 'app';
+    else if (booking === 'yes') key = 'booking';
+    else if (site === 'fix') key = 'fix';
+    else if (site === 'rebuild') key = 'refresh';
+    let text = results[key];
+    if (monthly && key === 'new') text = 'New Build — $297 \u00d7 12 mo. A brand-new custom site from scratch, up to 8 pages, logo polish, SEO.';
+    if (monthly && key === 'booking') text = 'Website + Booking — $397 \u00d7 12 mo. New Build plus online booking, payments, and email flows.';
+    const head = text.split('.')[0] + '.';
+    out.innerHTML = '<strong>' + head + '</strong> ' + text.slice(head.length).trim();
+  };
+  quiz.addEventListener('change', render);
+  quiz.querySelectorAll('[data-quiz-billing]').forEach((b) => {
+    b.addEventListener('click', () => {
+      monthly = b.dataset.quizBilling === 'monthly';
+      quiz.querySelectorAll('[data-quiz-billing]').forEach((x) => {
+        const on = x === b;
+        x.classList.toggle('is-active', on);
+        x.setAttribute('aria-pressed', String(on));
+      });
+      render();
+    });
+  });
+  render();
+})();
+
+// ---- Before / after slider — Motion.dev style drag ----
+(function () {
+  const ba = document.querySelector('[data-compare]');
+  if (!ba) return;
+  const before = ba.querySelector('[data-ba-before]');
+  const handle = ba.querySelector('[data-ba-handle]');
+  const setPos = (x) => {
+    const r = ba.getBoundingClientRect();
+    const p = Math.max(4, Math.min(96, ((x - r.left) / r.width) * 100));
+    before.style.clipPath = 'inset(0 ' + (100 - p) + '% 0 0)';
+    handle.style.left = p + '%';
+  };
+  ba.addEventListener('pointerdown', (e) => {
+    setPos(e.clientX);
+    const move = (ev) => setPos(ev.clientX);
+    const up = () => {
+      window.removeEventListener('pointermove', move);
+      window.removeEventListener('pointerup', up);
+    };
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', up);
+  });
+})();
+
+// ---- FAQ accordion — componentry.dev style ----
+(function () {
+  const list = document.querySelector('[data-faq]');
+  if (!list) return;
+  list.addEventListener('click', (e) => {
+    const btn = e.target.closest('.faq__q');
+    if (!btn) return;
+    const item = btn.closest('.faq__item');
+    const answer = item.querySelector('.faq__a');
+    const open = !answer.hidden;
+    list.querySelectorAll('.faq__item').forEach((it) => {
+      it.querySelector('.faq__a').hidden = true;
+      it.querySelector('.faq__q').setAttribute('aria-expanded', 'false');
+      it.querySelector('.faq__icon').textContent = '+';
+    });
+    if (!open) {
+      answer.hidden = false;
+      btn.setAttribute('aria-expanded', 'true');
+      btn.querySelector('.faq__icon').textContent = '−';
+    }
+  });
+})();
+
+// ---- Scroll reveal + count-up stats — Motion.dev style ----
+(function () {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('[data-count]').forEach((el) => {
+    const target = Number(el.dataset.count);
+    if (!Number.isFinite(target)) return;
+    if (reduce) { el.textContent = String(target); return; }
+    const start = performance.now();
+    const dur = 900;
+    const tick = (now) => {
+      const p = Math.min(1, (now - start) / dur);
+      el.textContent = String(Math.round(target * (1 - Math.pow(1 - p, 3))));
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  });
+  if (!('IntersectionObserver' in window) || reduce) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.section, .strip').forEach((el) => {
+    el.classList.add('reveal');
+    io.observe(el);
+  });
+})();
+
+// ---- Scroll-build stand-in — Google Flow placeholder, clearly labelled ----
+(function () {
+  const section = document.querySelector('.process');
+  if (!section) return;
+  const steps = [...section.querySelectorAll('[data-build-step]')];
+  const bar = section.querySelector('[data-build-bar]');
+  if (!('IntersectionObserver' in window)) {
+    steps.forEach((s) => s.classList.add('is-lit'));
+    if (bar) bar.style.width = '100%';
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-lit');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  steps.forEach((s) => io.observe(s));
+  const onScroll = () => {
+    if (!bar) return;
+    const r = section.getBoundingClientRect();
+    const vh = window.innerHeight;
+    const p = Math.max(0, Math.min(1, (vh - r.top) / (vh * 0.7)));
+    bar.style.width = Math.round(p * 100) + '%';
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+
+// ---- Booking stepper — fills the existing mailto contact form ----
+(function () {
+  const box = document.querySelector('[data-booking]');
+  if (!box) return;
+  const form = document.querySelector('.contact__form');
+  if (!form) return;
+  const serviceSel = box.querySelector('[data-book-service]');
+  const daySel = box.querySelector('[data-book-day]');
+  const summary = box.querySelector('[data-book-summary]');
+  const tierFor = {
+    'Free estimate': 'Not sure yet',
+    'Showroom visit': 'Not sure yet',
+    'New website consult': 'New Build ($2,497)',
+    'Mobile Rescue fix': 'Mobile Rescue ($597)',
+  };
+  const render = () => { summary.textContent = serviceSel.value + ' \u00b7 ' + daySel.value; };
+  box.addEventListener('change', render);
+  render();
+  box.querySelector('[data-book-apply]').addEventListener('click', () => {
+    const tier = form.querySelector('[name="tier"]');
+    const message = form.querySelector('[name="message"]');
+    if (tier) tier.value = tierFor[serviceSel.value] || 'Not sure yet';
+    if (message) message.value = "I'd like a " + serviceSel.value.toLowerCase() + " on " + daySel.value + ".";
+    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const name = form.querySelector('[name="name"]');
+    if (name) name.focus({ preventScroll: true });
   });
 })();

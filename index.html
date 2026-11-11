@@ -224,11 +224,29 @@
           </div>
 
           <dl class="hero__stats">
-            <div><dt>Live projects</dt><dd>3</dd></div>
-            <div><dt data-region-leads-label>Placer County leads sourced</dt><dd data-region-leads-count>96</dd></div>
+            <div><dt>Live projects</dt><dd data-count="3">3</dd></div>
+            <div><dt data-region-leads-label>Placer County leads sourced</dt><dd data-region-leads-count data-count="96">96</dd></div>
             <div><dt>Avg. time to launch</dt><dd>2-3 wks</dd></div>
             <div><dt>Care plans from</dt><dd>$47/mo</dd></div>
           </dl>
+
+          <!-- Sample-site picker — componentry.dev / 21st.dev style -->
+          <div class="picker" data-picker>
+            <p class="picker__label">See what yours could look like</p>
+            <div class="picker__chips" role="group" aria-label="Choose a business type">
+              <button type="button" class="chip is-active" data-biz="contractor" aria-pressed="true">Contractor</button>
+              <button type="button" class="chip" data-biz="cabinets" aria-pressed="false">Cabinet shop</button>
+              <button type="button" class="chip" data-biz="restaurant" aria-pressed="false">Restaurant</button>
+            </div>
+            <div class="sample" data-sample>
+              <p class="sample__kicker">Sample site preview</p>
+              <h3 class="sample__title" data-sample-title>No Limit Muffler — Roseville</h3>
+              <p class="sample__desc" data-sample-desc>Custom fabrication, exhaust and welding. See the work, get a quote, call the shop.</p>
+              <p class="sample__tags" data-sample-tags><span>Custom fab</span><span>Exhaust</span><span>Quote form</span></p>
+              <p><a class="btn btn--primary" href="#contact" data-sample-cta>Get a quote</a></p>
+            </div>
+            <p class="picker__note">A preview of the kind of site we build for businesses like yours — not a client site.</p>
+          </div>
         </div>
       </section>
 
@@ -260,6 +278,13 @@
           </p>
         </header>
 
+        <div class="filter-row" role="group" aria-label="Filter projects by type" data-work-filter>
+          <button type="button" class="chip is-active" data-filter="all" aria-pressed="true">All work</button>
+          <button type="button" class="chip" data-filter="booking" aria-pressed="false">Website + booking</button>
+          <button type="button" class="chip" data-filter="app" aria-pressed="false">Web app</button>
+          <button type="button" class="chip" data-filter="shop" aria-pressed="false">E-commerce</button>
+        </div>
+
         <div class="showroom__stage" data-showroom>
           <div class="showroom__controls" role="group" aria-label="Browse projects">
             <button class="showroom__arrow showroom__arrow--prev" aria-label="Previous project" type="button">
@@ -277,7 +302,7 @@
 
           <div class="showroom__viewport">
             <!-- SLIDE 1 -->
-            <article class="slide is-active" data-slide="0">
+            <article class="slide is-active" data-slide="0" data-cat="booking">
               <div class="slide__media">
                 <div class="preview preview--night">
                   <div class="preview__chrome"><span></span><span></span><span></span></div>
@@ -341,7 +366,7 @@
             </article>
 
             <!-- SLIDE 2 -->
-            <article class="slide" data-slide="1">
+            <article class="slide" data-slide="1" data-cat="app">
               <div class="slide__media">
                 <div class="preview preview--heart">
                   <div class="preview__chrome"><span></span><span></span><span></span></div>
@@ -394,7 +419,7 @@
             </article>
 
             <!-- SLIDE 3 -->
-            <article class="slide" data-slide="2">
+            <article class="slide" data-slide="2" data-cat="shop">
               <div class="slide__media">
                 <div class="preview preview--shop">
                   <div class="preview__chrome"><span></span><span></span><span></span></div>
@@ -456,6 +481,37 @@
             ongoing support are included only when specified in your proposal.
           </p>
         </header>
+
+        <div class="quiz" data-quiz>
+          <p class="quiz__title">Which tier fits you?</p>
+          <p class="quiz__lede">Three questions, and it points to a tier from the pricing below.</p>
+          <div class="quiz__grid">
+            <label>Do you already have a website?
+              <select data-quiz-q="site">
+                <option value="no">No — I need one from scratch</option>
+                <option value="rebuild">Yes — it needs a rebuild</option>
+                <option value="fix">Yes — it just needs fixing</option>
+              </select>
+            </label>
+            <label>Do customers need to book online?
+              <select data-quiz-q="booking">
+                <option value="no">No — phone is fine</option>
+                <option value="yes">Yes — bookings are the point</option>
+              </select>
+            </label>
+            <label>Do you need a custom app too?
+              <select data-quiz-q="app">
+                <option value="no">No — just the site</option>
+                <option value="yes">Yes — portal, ordering or an internal tool</option>
+              </select>
+            </label>
+          </div>
+          <div class="quiz__toggle" role="group" aria-label="Flat price or monthly">
+            <button type="button" class="chip is-active" data-quiz-billing="flat" aria-pressed="true">Flat price</button>
+            <button type="button" class="chip" data-quiz-billing="monthly" aria-pressed="false">Monthly</button>
+          </div>
+          <p class="quiz__out" data-quiz-out aria-live="polite"><strong>New Build — $2,497 flat.</strong> A brand-new custom site from scratch, up to 8 pages, logo polish, SEO.</p>
+        </div>
 
         <div class="tier-grid">
           <article class="tier">
@@ -661,6 +717,20 @@
         </div>
       </section>
 
+      <!-- BEFORE / AFTER — Motion.dev style drag, illustration only -->
+      <section class="section compare" id="compare">
+        <header class="section__head">
+          <p class="section__eyebrow">See the difference</p>
+          <h2 class="section__title">Same business, refreshed.</h2>
+          <p class="section__lede">Drag the divider. This is an illustration of the kind of change a Refresh makes — not a real client site.</p>
+        </header>
+        <div class="ba" data-compare>
+          <div class="ba__after">After — clear headline, real services, one obvious next step</div>
+          <div class="ba__before" data-ba-before>Before — dated, phone-only, no clear next step</div>
+          <div class="ba__handle" data-ba-handle></div>
+        </div>
+      </section>
+
       <!-- PROCESS -->
       <section class="section process" id="process">
         <header class="section__head">
@@ -668,8 +738,12 @@
           <h2 class="section__title">Four steps. No vaporware.</h2>
         </header>
 
+        <p class="build__note">Scroll-build preview — a stand-in for a Google Flow scroll animation. The real version needs actual frames of a site being built.</p>
+        <div class="build__progress" aria-hidden="true"><i data-build-bar></i></div>
+
+
         <ol class="process__list" role="list">
-          <li>
+          <li data-build-step>
             <span class="process__num">01</span>
             <h3>Discovery call</h3>
             <p>
@@ -678,7 +752,7 @@
               and realistic schedule.
             </p>
           </li>
-          <li>
+          <li data-build-step>
             <span class="process__num">02</span>
             <h3>Design in the open</h3>
             <p>
@@ -686,7 +760,7 @@
               plain English, no design jargon.
             </p>
           </li>
-          <li>
+          <li data-build-step>
             <span class="process__num">03</span>
             <h3>Ship &amp; measure</h3>
             <p>
@@ -694,7 +768,7 @@
               short handoff walkthrough. Analytics are added when included in your scope.
             </p>
           </li>
-          <li>
+          <li data-build-step>
             <span class="process__num">04</span>
             <h3>Scoped aftercare</h3>
             <p>
@@ -742,6 +816,28 @@
         </div>
       </section>
 
+      <!-- FAQ -->
+      <section class="section faq" id="faq">
+        <header class="section__head">
+          <p class="section__eyebrow">Questions</p>
+          <h2 class="section__title">Before you call.</h2>
+        </header>
+        <div class="faq__list" data-faq>
+          <div class="faq__item">
+            <button type="button" class="faq__q" aria-expanded="false">What do you fix first? <span class="faq__icon" aria-hidden="true">+</span></button>
+            <div class="faq__a" hidden><p>The booking route. If a visitor cannot book or call in ten seconds, the rest does not matter — that is the first thing we check on any site.</p></div>
+          </div>
+          <div class="faq__item">
+            <button type="button" class="faq__q" aria-expanded="false">Do I own the site? <span class="faq__icon" aria-hidden="true">+</span></button>
+            <div class="faq__a" hidden><p>Yes. Domain, code, content, analytics. No lock-in. Flat prices — quotes do not change unless the scope does, in writing.</p></div>
+          </div>
+          <div class="faq__item">
+            <button type="button" class="faq__q" aria-expanded="false">What if my site is fine? <span class="faq__icon" aria-hidden="true">+</span></button>
+            <div class="faq__a" hidden><p>We will say so. No pressure, no rebuild for the sake of it — a Mobile Rescue fix might be all it needs.</p></div>
+          </div>
+        </div>
+      </section>
+
       <!-- CONTACT -->
       <section class="section contact" id="contact">
         <div class="contact__inner">
@@ -751,6 +847,30 @@
             No pressure. If your site is fine, we&rsquo;ll say so. If it isn&rsquo;t, we&rsquo;ll
             quote a flat price on the call.
           </p>
+
+          <div class="booking" data-booking>
+            <p class="booking__title">Book a slot in three taps</p>
+            <div class="booking__grid">
+              <label>What do you need?
+                <select data-book-service>
+                  <option>Free estimate</option>
+                  <option>Showroom visit</option>
+                  <option>New website consult</option>
+                  <option>Mobile Rescue fix</option>
+                </select>
+              </label>
+              <label>Pick a day
+                <select data-book-day>
+                  <option>Wednesday</option>
+                  <option>Thursday</option>
+                  <option>Friday</option>
+                </select>
+              </label>
+            </div>
+            <p class="booking__summary" data-book-summary aria-live="polite">Free estimate · Wednesday</p>
+            <button type="button" class="btn btn--primary" data-book-apply>Use this in the form below</button>
+            <p class="booking__note">This fills in the form below. Nothing is sent until you review the email draft and press Send.</p>
+          </div>
 
           <form class="contact__form" onsubmit="handleContact(event)">
             <label>
