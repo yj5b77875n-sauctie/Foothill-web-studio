@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Foothill Web Studio — Websites & Apps for Placer County</title>
+    <meta
+      name="description"
+      content="Foothill Web Studio designs credible, modern websites and custom apps for small businesses across Placer County — from Auburn to Roseville, Rocklin, and Tahoe City."
+    />
+    <meta name="theme-color" content="#0e1210" />
+    <meta property="og:title" content="Foothill Web Studio" />
+    <meta
+      property="og:description"
+      content="A Placer County web studio building credible sites and custom apps that convert."
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232f6a4d'/%3E%3Cpath d='M4 22 L11 12 L16 18 L20 14 L28 22 Z' fill='%23e6f0ea'/%3E%3Ccircle cx='23' cy='9' r='2.4' fill='%23e6f0ea'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="header" id="header">
+      <a href="#top" class="brand" aria-label="Foothill Web Studio, home">
+        <svg
+          class="brand__mark"
+          width="34"
+          height="34"
+          viewBox="0 0 40 40"
+          fill="none"
+          aria-hidden="true"
+        >
+          <rect x="1" y="1" width="38" height="38" rx="9" stroke="currentColor" stroke-width="1.4" />
+          <path
+            d="M6 28 L15 15 L21 22 L26 17 L34 28"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            fill="none"
+          />
+          <circle cx="29" cy="12" r="2.4" fill="currentColor" />
+        </svg>
+        <span class="brand__wordmark">
+          <span class="brand__name">Foothill</span>
+          <span class="brand__sub">Web Studio</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="nav__cta">Start a project</a>
+      </nav>
+
+      <div class="region-toggle" role="group" aria-label="Choose region">
+        <button
+          type="button"
+          class="region-toggle__btn is-active"
+          data-region-btn="placer"
+          aria-pressed="true"
+          title="Placer County · Sacramento region"
+        >
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 20 L10 10 L14 15 L17 12 L20 20 Z" />
+          </svg>
+          Placer
+        </button>
+        <button
+          type="button"
+          class="region-toggle__btn"
+          data-region-btn="papago"
+          aria-pressed="false"
+          title="Papago · Phoenix / Tucson region"
+        >
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+            <path d="M6 20 V12 M6 14 h3 v-2 M6 12 v-2 h2" />
+            <path d="M14 20 V9 M14 12 h3 v-2 M14 15 h2" />
+          </svg>
+          Papago
+        </button>
+      </div>
+
+      <button
+        class="theme-toggle"
+        data-theme-toggle
+        aria-label="Switch to light mode"
+        type="button"
+      ></button>
+
+      <button class="menu" aria-label="Open menu" aria-expanded="false" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <nav class="mobile-nav" aria-label="Mobile" hidden>
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav__cta">Start a project</a>
+    </nav>
+
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div class="hero__grid" aria-hidden="true"></div>
+
+        <div class="ticker" aria-label="Cities and towns we serve" data-ticker>
+            <div class="ticker__viewport">
+              <div class="ticker__track" aria-hidden="false" data-ticker-track>
+                <!-- Group 1 (visible) -->
+                <span class="ticker__label"><span class="dot"></span>Serving</span>
+                <span class="ticker__item">Auburn</span>
+                <span class="ticker__item">Roseville</span>
+                <span class="ticker__item">Rocklin</span>
+                <span class="ticker__item">Lincoln</span>
+                <span class="ticker__item">Loomis</span>
+                <span class="ticker__item">Newcastle</span>
+                <span class="ticker__item">Penryn</span>
+                <span class="ticker__item">Granite Bay</span>
+                <span class="ticker__item">Meadow Vista</span>
+                <span class="ticker__item">Colfax</span>
+                <span class="ticker__item">Foresthill</span>
+                <span class="ticker__item">Weimar</span>
+                <span class="ticker__item">Applegate</span>
+                <span class="ticker__item">Alta</span>
+                <span class="ticker__item">Dutch Flat</span>
+                <span class="ticker__item">Sheridan</span>
+                <span class="ticker__item">Kings Beach</span>
+                <span class="ticker__item">Tahoe City</span>
+                <span class="ticker__item">Tahoma</span>
+                <span class="ticker__item">Truckee</span>
+                <span class="ticker__item">Sacramento</span>
+                <span class="ticker__item">West Sacramento</span>
+                <span class="ticker__item">North Highlands</span>
+                <span class="ticker__item">Arden-Arcade</span>
+                <span class="ticker__item">Carmichael</span>
+                <span class="ticker__item">Fair Oaks</span>
+                <span class="ticker__item">Citrus Heights</span>
+                <span class="ticker__item">Orangevale</span>
+                <span class="ticker__item">Folsom</span>
+                <span class="ticker__item">Rancho Cordova</span>
+                <span class="ticker__item">Gold River</span>
+                <span class="ticker__item">Elk Grove</span>
+                <span class="ticker__item">Galt</span>
+                <span class="ticker__item">Wilton</span>
+                <span class="ticker__item">Isleton</span>
+                <span class="ticker__item">Antelope</span>
+                <span class="ticker__item">Rio Linda</span>
+                <span class="ticker__item">Elverta</span>
+                <span class="ticker__item">Placer County</span>
+                <span class="ticker__item">Sacramento County</span>
+                <!-- Group 2 (duplicate for seamless loop) -->
+                <span class="ticker__label" aria-hidden="true"><span class="dot"></span>Serving</span>
+                <span class="ticker__item" aria-hidden="true">Auburn</span>
+                <span class="ticker__item" aria-hidden="true">Roseville</span>
+                <span class="ticker__item" aria-hidden="true">Rocklin</span>
+                <span class="ticker__item" aria-hidden="true">Lincoln</span>
+                <span class="ticker__item" aria-hidden="true">Loomis</span>
+                <span class="ticker__item" aria-hidden="true">Newcastle</span>
+                <span class="ticker__item" aria-hidden="true">Penryn</span>
+                <span class="ticker__item" aria-hidden="true">Granite Bay</span>
+                <span class="ticker__item" aria-hidden="true">Meadow Vista</span>
+                <span class="ticker__item" aria-hidden="true">Colfax</span>
+                <span class="ticker__item" aria-hidden="true">Foresthill</span>
+                <span class="ticker__item" aria-hidden="true">Weimar</span>
+                <span class="ticker__item" aria-hidden="true">Applegate</span>
+                <span class="ticker__item" aria-hidden="true">Alta</span>
+                <span class="ticker__item" aria-hidden="true">Dutch Flat</span>
+                <span class="ticker__item" aria-hidden="true">Sheridan</span>
+                <span class="ticker__item" aria-hidden="true">Kings Beach</span>
+                <span class="ticker__item" aria-hidden="true">Tahoe City</span>
+                <span class="ticker__item" aria-hidden="true">Tahoma</span>
+                <span class="ticker__item" aria-hidden="true">Truckee</span>
+                <span class="ticker__item" aria-hidden="true">Sacramento</span>
+                <span class="ticker__item" aria-hidden="true">West Sacramento</span>
+                <span class="ticker__item" aria-hidden="true">North Highlands</span>
+                <span class="ticker__item" aria-hidden="true">Arden-Arcade</span>
+                <span class="ticker__item" aria-hidden="true">Carmichael</span>
+                <span class="ticker__item" aria-hidden="true">Fair Oaks</span>
+                <span class="ticker__item" aria-hidden="true">Citrus Heights</span>
+                <span class="ticker__item" aria-hidden="true">Orangevale</span>
+                <span class="ticker__item" aria-hidden="true">Folsom</span>
+                <span class="ticker__item" aria-hidden="true">Rancho Cordova</span>
+                <span class="ticker__item" aria-hidden="true">Gold River</span>
+                <span class="ticker__item" aria-hidden="true">Elk Grove</span>
+                <span class="ticker__item" aria-hidden="true">Galt</span>
+                <span class="ticker__item" aria-hidden="true">Wilton</span>
+                <span class="ticker__item" aria-hidden="true">Isleton</span>
+                <span class="ticker__item" aria-hidden="true">Antelope</span>
+                <span class="ticker__item" aria-hidden="true">Rio Linda</span>
+                <span class="ticker__item" aria-hidden="true">Elverta</span>
+                <span class="ticker__item" aria-hidden="true">Placer County</span>
+                <span class="ticker__item" aria-hidden="true">Sacramento County</span>
+              </div>
+            </div>
+          </div>
+
+        <div class="hero__inner">
+          <h1 class="hero__title">
+            Websites &amp; apps for the businesses that make
+            <span class="accent" data-region-italic>Placer County</span> run.
+          </h1>
+
+          <p class="hero__lede">
+            We build fast, credible, mobile-first websites — and the occasional custom app — for
+            restaurants, contractors, and local services. Fair pricing. Real code. Yours to keep.
+          </p>
+
+          <div class="hero__ctas">
+            <a href="#contact" class="btn btn--primary">Start a project</a>
+            <a href="#work" class="btn btn--ghost">See our work →</a>
+          </div>
+
+          <dl class="hero__stats">
+            <div><dt>Live projects</dt><dd>3</dd></div>
+            <div><dt data-region-leads-label>Placer County leads sourced</dt><dd data-region-leads-count>96</dd></div>
+            <div><dt>Avg. time to launch</dt><dd>2-3 wks</dd></div>
+            <div><dt>Care plans from</dt><dd>$47/mo</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- CREDIBILITY / STACK STRIP -->
+      <section class="strip" aria-label="What we build with">
+        <p class="strip__label">Built with production-grade tools</p>
+        <ul class="strip__list" role="list">
+          <li>React</li>
+          <li>Next.js</li>
+          <li>Supabase</li>
+          <li>Postgres</li>
+          <li>Flask</li>
+          <li>FastAPI</li>
+          <li>PWA</li>
+          <li>Stripe</li>
+          <li>Shopify</li>
+          <li>OpenAI</li>
+        </ul>
+      </section>
+
+      <!-- SHOWROOM -->
+      <section class="section showroom" id="work">
+        <header class="section__head">
+          <p class="section__eyebrow">Selected work</p>
+          <h2 class="section__title">A showroom of what we ship.</h2>
+          <p class="section__lede">
+            Three live products we designed, built, and shipped. Use the arrows to browse — or tap a
+            card to see the details.
+          </p>
+        </header>
+
+        <div class="showroom__stage" data-showroom>
+          <div class="showroom__controls" role="group" aria-label="Browse projects">
+            <button class="showroom__arrow showroom__arrow--prev" aria-label="Previous project" type="button">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="showroom__dots" role="group" aria-label="Choose a project">
+              <button type="button" aria-label="Night Cap" aria-pressed="true" data-dot="0" class="is-active"></button>
+              <button type="button" aria-label="Millionaire Mindset" aria-pressed="false" data-dot="1"></button>
+              <button type="button" aria-label="Loyal Paws Co." aria-pressed="false" data-dot="2"></button>
+            </div>
+            <button class="showroom__arrow showroom__arrow--next" aria-label="Next project" type="button">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+
+          <div class="showroom__viewport">
+            <!-- SLIDE 1 -->
+            <article class="slide is-active" data-slide="0">
+              <div class="slide__media">
+                <div class="preview preview--night">
+                  <div class="preview__chrome"><span></span><span></span><span></span></div>
+                  <div class="preview__screen">
+                    <div class="pn-header">
+                      <div class="pn-title">
+                        <span class="pn-logo">◐</span>
+                        <span>Night Cap</span>
+                      </div>
+                      <div class="pn-tabs"><span class="pn-tab is-on">Tonight</span><span class="pn-tab">Trending</span><span class="pn-tab">Map</span></div>
+                    </div>
+                    <div class="pn-hero">Placer County<br/><em>after dark</em></div>
+                    <div class="pn-cards">
+                      <div class="pn-card">
+                        <div class="pn-thumb"></div>
+                        <div class="pn-meta">
+                          <strong>The Auburn Alehouse</strong>
+                          <span>Live music · 9pm</span>
+                        </div>
+                        <span class="pn-badge">Verified</span>
+                      </div>
+                      <div class="pn-card">
+                        <div class="pn-thumb pn-thumb--b"></div>
+                        <div class="pn-meta">
+                          <strong>Monk's Cellar</strong>
+                          <span>Trivia · 7pm</span>
+                        </div>
+                        <span class="pn-badge">Verified</span>
+                      </div>
+                      <div class="pn-card">
+                        <div class="pn-thumb pn-thumb--c"></div>
+                        <div class="pn-meta">
+                          <strong>Goldfield's Loomis</strong>
+                          <span>DJ · 10pm</span>
+                        </div>
+                        <span class="pn-badge">Verified</span>
+                      </div>
+                    </div>
+                    <div class="pn-fab">+</div>
+                  </div>
+                </div>
+              </div>
+              <div class="slide__body">
+                <p class="slide__kicker">Placer County · Consumer PWA</p>
+                <h3 class="slide__title">Night Cap</h3>
+                <p class="slide__lede">
+                  A mobile-first nightlife discovery and group-planning app covering 186+ verified
+                  venues and 326+ recurring events across Placer County.
+                </p>
+                <ul class="slide__features" role="list">
+                  <li><span>Build-a-Night</span> multi-stop itinerary builder with shareable plans</li>
+                  <li><span>Verified data</span> every venue &amp; event backed by a source URL and quote</li>
+                  <li><span>Live location</span> plan-scoped, opt-in, ephemeral pin sharing</li>
+                  <li><span>Owner dashboard</span> hidden passphrase-gated admin surface</li>
+                </ul>
+                <div class="slide__tech">
+                  <span>React</span><span>Supabase</span><span>Postgres</span><span>PWA</span>
+                </div>
+                <a class="slide__link" href="https://placer-after-dark.pplx.app" target="_blank" rel="noopener">Visit the live site →</a>
+              </div>
+            </article>
+
+            <!-- SLIDE 2 -->
+            <article class="slide" data-slide="1">
+              <div class="slide__media">
+                <div class="preview preview--heart">
+                  <div class="preview__chrome"><span></span><span></span><span></span></div>
+                  <div class="preview__screen">
+                    <div class="hs-header">
+                      <span class="hs-logo">♥</span>
+                      <span class="hs-name">Millionaire Mindset</span>
+                    </div>
+                    <div class="hs-tiles">
+                      <div class="hs-tile">
+                        <span class="hs-tile__label">Net Worth</span>
+                        <strong>$142,300</strong>
+                        <span class="hs-tile__note">+2.4% this month</span>
+                      </div>
+                      <div class="hs-tile hs-tile--accent">
+                        <span class="hs-tile__label">Calories today</span>
+                        <strong>1,842 / 2,400</strong>
+                        <div class="hs-bar"><i style="width:77%"></i></div>
+                      </div>
+                    </div>
+                    <div class="hs-plan">
+                      <p class="hs-plan__head">12-Week Roadmap · Week 6</p>
+                      <ul>
+                        <li><i class="check">✓</i> Zone 2 cardio · 3× this week</li>
+                        <li><i class="check">✓</i> Bench 3×5 @ 185</li>
+                        <li><i class="check pending">○</i> Log dinner macros</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slide__body">
+                <p class="slide__kicker">Personal fitness &amp; finance · Web app</p>
+                <h3 class="slide__title">Millionaire Mindset</h3>
+                <p class="slide__lede">
+                  A 12-week heart-health, strength, and net-worth roadmap tied to a macro tracker
+                  with Apple Watch webhook sync — persistent SQLite storage, offline-friendly PWA.
+                </p>
+                <ul class="slide__features" role="list">
+                  <li><span>Roadmap</span> weekly cardio, strength &amp; financial milestones</li>
+                  <li><span>Macros</span> food-autocomplete calorie &amp; protein tracker</li>
+                  <li><span>Watch sync</span> HealthKit webhook posts steps, HR, workouts</li>
+                  <li><span>Journaling</span> weight, glucose &amp; blood-pressure logs</li>
+                </ul>
+                <div class="slide__tech">
+                  <span>Flask</span><span>SQLite</span><span>HealthKit</span><span>PWA</span>
+                </div>
+                <a class="slide__link" href="https://heart-strength-roadmap.pplx.app" target="_blank" rel="noopener">Visit the live site →</a>
+              </div>
+            </article>
+
+            <!-- SLIDE 3 -->
+            <article class="slide" data-slide="2">
+              <div class="slide__media">
+                <div class="preview preview--shop">
+                  <div class="preview__chrome"><span></span><span></span><span></span></div>
+                  <div class="preview__screen">
+                    <div class="lp-header">
+                      <span class="lp-logo">🐾</span>
+                      <span class="lp-name">Loyal Paws Co.</span>
+                      <span class="lp-cart">Cart · 2</span>
+                    </div>
+                    <div class="lp-hero">
+                      <div class="lp-hero__copy">
+                        <strong>Gear your dog will actually use.</strong>
+                        <span>Supplier-verified products. No dropship guesswork.</span>
+                      </div>
+                      <div class="lp-hero__badge">Pre-launch</div>
+                    </div>
+                    <div class="lp-grid">
+                      <div class="lp-card"><div class="lp-thumb lp-thumb--a"></div><span>Cushioned Harness</span><em>$32</em></div>
+                      <div class="lp-card"><div class="lp-thumb lp-thumb--b"></div><span>All-Weather Bed</span><em>$68</em></div>
+                      <div class="lp-card"><div class="lp-thumb lp-thumb--c"></div><span>Travel Bowl</span><em>$14</em></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slide__body">
+                <p class="slide__kicker">E-commerce · Supervised dropship pipeline</p>
+                <h3 class="slide__title">Loyal Paws Co.</h3>
+                <p class="slide__lede">
+                  A Shopify storefront paired with a FastAPI + Supabase agent pipeline. Trend Scout →
+                  Supplier Matcher → Store Builder → human approval → Launch Manager. No listing
+                  goes live without a sign-off.
+                </p>
+                <ul class="slide__features" role="list">
+                  <li><span>Real supplier data</span> CJdropshipping catalog, stock &amp; freight</li>
+                  <li><span>Human-approval gate</span> publishing requires recorded sign-off</li>
+                  <li><span>Deterministic pricing</span> margin math is code, not LLM guesswork</li>
+                  <li><span>Compliant listings</span> unsupported claims are stripped automatically</li>
+                </ul>
+                <div class="slide__tech">
+                  <span>Shopify</span><span>FastAPI</span><span>Supabase</span><span>Railway</span>
+                </div>
+                <span class="slide__link slide__link--muted">Pre-launch · storefront in review</span>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="section services" id="services">
+        <header class="section__head">
+          <p class="section__eyebrow">Services &amp; pricing</p>
+          <h2 class="section__title">Flat pricing. Priced to undercut, not to underdeliver.</h2>
+          <p class="section__lede">
+            Five build tiers cover most projects, plus monthly social media plans if you want
+            us to run your feed too. We agree the scope, deliverables, access requirements,
+            timeline, and correction window in writing before work begins. Analytics and
+            ongoing support are included only when specified in your proposal.
+          </p>
+        </header>
+
+        <div class="tier-grid">
+          <article class="tier">
+            <p class="tier__tag">Tier 1</p>
+            <h3 class="tier__name">Mobile Rescue</h3>
+            <p class="tier__price"><span>$597</span> flat</p>
+            <p class="tier__desc">
+              Targeted improvements to your existing website, not a complete redesign.
+              The fixed price is confirmed after reviewing your platform, editing access,
+              and agreed scope.
+            </p>
+            <ul role="list">
+              <li>Up to 3 agreed improvements across no more than 2 existing pages</li>
+              <li>Mobile layout, readability, call buttons, or quote-request-path improvements where feasible</li>
+              <li>Mobile &amp; desktop checks, 1 consolidated revision round, and a short handoff</li>
+              <li>Target completion within 1 working week of the agreed start date, once content and access are ready</li>
+            </ul>
+            <details class="tier__terms">
+            <summary>Scope, timing &amp; exclusions</summary>
+            <p class="tier__desc">A working week means 5 business days. Timing is confirmed in your proposal and may change if feedback,
+              content, or access is delayed. New booking, payment, or CRM systems; major migrations;
+              malware cleanup; extensive copywriting; paid software; and ongoing support are outside
+              this package unless separately agreed. No guaranteed rankings, leads, revenue, or
+              performance score.</p>
+            </details>
+          </article>
+
+          <article class="tier">
+            <p class="tier__tag">Tier 2</p>
+            <h3 class="tier__name">Refresh</h3>
+            <p class="tier__price"><span>$1,297</span> flat</p>
+            <p class="tier__desc">
+              Same URL, brand-new site. Modern layout, real typography, hero photography, and copy
+              that answers &ldquo;what does this business do&rdquo; in the first viewport.
+            </p>
+            <ul role="list">
+              <li>5-page redesign on your existing domain</li>
+              <li>Photography &amp; copy polish</li>
+              <li>Contact form + Google Business sync</li>
+              <li>Target first preview within 1 working week once content and access are ready; launch follows your approval</li>
+            </ul>
+          </article>
+
+          <article class="tier tier--featured">
+            <p class="tier__tag">Tier 3 · Most popular</p>
+            <h3 class="tier__name">New Build</h3>
+            <p class="tier__price"><span>$2,497</span> flat <em>or $297 × 12 mo</em></p>
+            <p class="tier__desc">
+              A brand-new custom site from scratch. Real design, real code, hosted where you want.
+              Includes brand basics, imagery, and full SEO groundwork.
+            </p>
+            <ul role="list">
+              <li>Up to 8 custom pages</li>
+              <li>Logo polish &amp; brand palette</li>
+              <li>SEO, sitemap, Open Graph</li>
+              <li>Estimated 2–3 weeks from the agreed start date; schedule confirmed after scoping</li>
+            </ul>
+          </article>
+
+          <article class="tier">
+            <p class="tier__tag">Tier 4</p>
+            <h3 class="tier__name">Website + Booking</h3>
+            <p class="tier__price"><span>$3,997</span> flat <em>or $397 × 12 mo</em></p>
+            <p class="tier__desc">
+              New Build plus an integrated booking or reservation system. Ideal for restaurants,
+              trades, and consultants who lose leads to phone tag.
+            </p>
+            <ul role="list">
+              <li>Everything in New Build</li>
+              <li>Online booking / reservations</li>
+              <li>Stripe or Square payments</li>
+              <li>Customer &amp; owner email flows</li>
+            </ul>
+          </article>
+
+          <article class="tier tier--wide">
+            <p class="tier__tag">Tier 5</p>
+            <h3 class="tier__name">Website + Custom App</h3>
+            <p class="tier__price"><span>from $8,997</span></p>
+            <p class="tier__desc">
+              A public site paired with a real custom app — customer portal, ordering system,
+              internal tool, or PWA. Same team that built Night Cap and Millionaire Mindset. Scoped
+              per project after a 30-minute discovery call.
+            </p>
+            <ul role="list">
+              <li>Custom app (web or PWA)</li>
+              <li>Auth, database, admin dashboard</li>
+              <li>Third-party integrations (Stripe, Twilio, Apple HealthKit, etc.)</li>
+              <li>Discovery &amp; scoping call included</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- SOCIAL MEDIA MANAGEMENT -->
+        <div class="social">
+          <div class="social__head">
+            <p class="section__eyebrow">Social media management</p>
+            <h3>We run the feed. You run the business.</h3>
+            <p>
+              Monthly plans for restaurants, trades, and local services who want a consistent
+              feed without hiring an in-house marketer. Content is planned around your slow
+              days, your specials, and your reviews — not stock templates. Cancel any time.
+            </p>
+          </div>
+          <div class="social__grid">
+            <div class="social__card">
+              <p class="social__tag">Starter</p>
+              <p class="social__name">Presence</p>
+              <p class="social__price">$497<em>/mo</em></p>
+              <p class="social__desc">
+                Show up consistently on one platform. Ideal if you just need to look active
+                and reachable.
+              </p>
+              <ul role="list">
+                <li>1 platform (Instagram, Facebook, or Google Business)</li>
+                <li>8 posts/mo &middot; on-brand graphics &amp; captions</li>
+                <li>Monthly content calendar you approve</li>
+                <li>DM &amp; comment triage (business hours)</li>
+                <li>Monthly analytics recap</li>
+              </ul>
+            </div>
+            <div class="social__card social__card--featured">
+              <p class="social__tag">Growth &middot; most popular</p>
+              <p class="social__name">Momentum</p>
+              <p class="social__price">$997<em>/mo</em></p>
+              <p class="social__desc">
+                Multi-platform presence with short-form video and light paid boosts. For
+                businesses actively chasing new customers.
+              </p>
+              <ul role="list">
+                <li>2 platforms &middot; cross-posted &amp; adapted</li>
+                <li>16 posts/mo + 4 short-form videos (Reels/TikTok)</li>
+                <li>1 on-site content shoot per month (Placer County)</li>
+                <li>$100/mo boosted-post budget managed</li>
+                <li>Bi-weekly review call</li>
+              </ul>
+            </div>
+            <div class="social__card">
+              <p class="social__tag">Full service</p>
+              <p class="social__name">Concierge</p>
+              <p class="social__price">$1,997<em>/mo</em></p>
+              <p class="social__desc">
+                We become your outsourced social team. Best for busy operators and
+                multi-location businesses.
+              </p>
+              <ul role="list">
+                <li>3+ platforms &middot; daily posting cadence</li>
+                <li>30+ posts/mo + 8 short-form videos</li>
+                <li>2 on-site content shoots per month</li>
+                <li>Paid ads managed (up to $500/mo ad spend)</li>
+                <li>Weekly strategy call &amp; competitor watch</li>
+                <li>Review response &amp; reputation management</li>
+              </ul>
+            </div>
+          </div>
+          <p class="social__addons">
+            <strong>Add-ons:</strong> Extra shoot day $297 &middot; One-off launch campaign
+            from $797 &middot; Bundle any social plan with a New Build and take 15% off month one.
+          </p>
+        </div>
+
+        <!-- CARE PLANS -->
+        <div class="care">
+          <div class="care__head">
+            <p class="section__eyebrow">Care plans</p>
+            <h3>Keep it fast, safe, and current.</h3>
+            <p>
+              Optional monthly plans covering hosting, security patches, small content edits, and
+              analytics reviews. Cancel any time.
+            </p>
+          </div>
+          <div class="care__grid">
+            <div class="care__card">
+              <p class="care__name">Basic</p>
+              <p class="care__price">$47<em>/mo</em></p>
+              <ul role="list">
+                <li>Hosting &amp; SSL</li>
+                <li>Monthly updates</li>
+                <li>Uptime monitoring</li>
+              </ul>
+            </div>
+            <div class="care__card care__card--featured">
+              <p class="care__name">Growth</p>
+              <p class="care__price">$147<em>/mo</em></p>
+              <ul role="list">
+                <li>Everything in Basic</li>
+                <li>30 min content edits / mo</li>
+                <li>Analytics report</li>
+                <li>Speed &amp; SEO tune-up</li>
+              </ul>
+            </div>
+            <div class="care__card">
+              <p class="care__name">Concierge</p>
+              <p class="care__price">$297<em>/mo</em></p>
+              <ul role="list">
+                <li>Everything in Growth</li>
+                <li>2 hrs edits / mo</li>
+                <li>Quarterly strategy call</li>
+                <li>Priority response</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESS -->
+      <section class="section process" id="process">
+        <header class="section__head">
+          <p class="section__eyebrow">Process</p>
+          <h2 class="section__title">Four steps. No vaporware.</h2>
+        </header>
+
+        <ol class="process__list" role="list">
+          <li>
+            <span class="process__num">01</span>
+            <h3>Discovery call</h3>
+            <p>
+              A 30-minute conversation. We audit what you have, learn what you actually need,
+              confirm access requirements, and follow up with a written scope, flat price,
+              and realistic schedule.
+            </p>
+          </li>
+          <li>
+            <span class="process__num">02</span>
+            <h3>Design in the open</h3>
+            <p>
+              You see the site take shape in a live preview link — not a static mockup. Feedback in
+              plain English, no design jargon.
+            </p>
+          </li>
+          <li>
+            <span class="process__num">03</span>
+            <h3>Ship &amp; measure</h3>
+            <p>
+              After your approval, we launch the agreed changes on your domain and provide a
+              short handoff walkthrough. Analytics are added when included in your scope.
+            </p>
+          </li>
+          <li>
+            <span class="process__num">04</span>
+            <h3>Scoped aftercare</h3>
+            <p>
+              Your proposal defines a limited correction window for the agreed work.
+              New requests are quoted separately, with an optional care plan for ongoing support.
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section about" id="about">
+        <div class="about__grid">
+          <div class="about__copy">
+            <p class="section__eyebrow">About</p>
+            <h2 class="section__title">We&rsquo;re local. We ship. We answer the phone.</h2>
+            <p>
+              Foothill Web Studio is a small, hands-on web practice based in the Sacramento area,
+              serving Placer County and Northern California. We build the kind of sites we&rsquo;d be
+              proud to hand to our own family&rsquo;s business — fast, honest, and free of the
+              agency-speak most local shops charge triple for.
+            </p>
+            <p>
+              Every project is scoped, designed, and built by the same people. No offshore
+              hand-offs. No mystery meat. You get a direct line to the person who wrote the code.
+            </p>
+
+            <dl class="about__facts">
+              <div><dt>Based in</dt><dd>Sacramento &amp; Placer County, CA</dd></div>
+              <div><dt>Get in touch</dt><dd>Call, text, or email to arrange a discussion</dd></div>
+              <div><dt>Payments</dt><dd>Stripe, ACH, or check</dd></div>
+              <div><dt>Contracts</dt><dd>Plain-English, month-to-month</dd></div>
+            </dl>
+          </div>
+
+          <aside class="about__promise">
+            <p class="section__eyebrow">Our promise</p>
+            <ul role="list">
+              <li><strong>You own everything.</strong> Domain, code, content, analytics. No lock-in.</li>
+              <li><strong>Flat prices.</strong> Quotes don&rsquo;t change unless the scope does — in writing.</li>
+              <li><strong>Real design.</strong> No stock templates dressed up with your logo.</li>
+              <li><strong>Human support.</strong> Text, call, or email a real person in this county.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section contact" id="contact">
+        <div class="contact__inner">
+          <p class="section__eyebrow">Start a project</p>
+          <h2 class="section__title">Tell us about your business.</h2>
+          <p class="contact__lede">
+            No pressure. If your site is fine, we&rsquo;ll say so. If it isn&rsquo;t, we&rsquo;ll
+            quote a flat price on the call.
+          </p>
+
+          <form class="contact__form" onsubmit="handleContact(event)">
+            <label>
+              <span>Your name</span>
+              <input type="text" name="name" required autocomplete="name" maxlength="100" />
+            </label>
+            <label>
+              <span>Business name</span>
+              <input type="text" name="business" required maxlength="160" />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" required autocomplete="email" maxlength="254" />
+            </label>
+            <label>
+              <span>Phone (optional)</span>
+              <input type="tel" name="phone" autocomplete="tel" maxlength="40" />
+            </label>
+            <label class="contact__wide">
+              <span>What are you trying to do?</span>
+              <textarea name="message" rows="4" maxlength="1500" placeholder="A short paragraph is plenty."></textarea>
+            </label>
+            <label class="contact__wide contact__tier">
+              <span>Best fit (if you have a guess)</span>
+              <select name="tier">
+                <option>Not sure yet</option>
+                <option>Mobile Rescue ($597)</option>
+                <option>Refresh ($1,297)</option>
+                <option>New Build ($2,497)</option>
+                <option>Website + Booking ($3,997)</option>
+                <option>Website + Custom App</option>
+              </select>
+            </label>
+            <div class="contact__submit">
+              <button type="submit" class="btn btn--primary">Prepare email</button>
+              <p class="contact__note">Creates a draft for your email app. You review and send it; this form does not submit online.<br>Contact Austin Ratliff directly: <a href="mailto:Austin.ratliff@foothillwebstudios.com">Austin.ratliff@foothillwebstudios.com</a> or <a href="tel:+19168991602">(916) 899-1602</a>.</p>
+            </div>
+          </form>
+          <div class="contact__ok" hidden aria-live="polite">
+            <h3>Your inquiry is ready to email.</h3>
+            <p>Nothing has been sent yet. Open the draft, review it, and press Send in your email app. If no email app opens, copy the message below into an email to <a href="mailto:Austin.ratliff@foothillwebstudios.com">Austin.ratliff@foothillwebstudios.com</a>.</p>
+            <a id="contact-email-draft" class="btn btn--primary" href="mailto:Austin.ratliff@foothillwebstudios.com">Open email draft</a>
+            <label for="contact-message-copy">Your message (copy if needed)</label>
+            <textarea id="contact-message-copy" rows="8" readonly></textarea>
+            <p>Prefer to talk? Call Austin at <a href="tel:+19168991602">(916) 899-1602</a>.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__col">
+        <div class="brand brand--footer">
+          <svg width="32" height="32" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <rect x="1" y="1" width="38" height="38" rx="9" stroke="currentColor" stroke-width="1.4" />
+            <path d="M6 28 L15 15 L21 22 L26 17 L34 28" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" fill="none" />
+            <circle cx="29" cy="12" r="2.4" fill="currentColor" />
+          </svg>
+          <span class="brand__wordmark">
+            <span class="brand__name">Foothill</span>
+            <span class="brand__sub">Web Studio</span>
+          </span>
+        </div>
+        <p class="footer__note">
+          Web design &amp; custom apps for Placer County businesses. <br />Sacramento, CA · Founded
+          2026.
+        </p>
+      </div>
+
+      <nav class="footer__col" aria-label="Footer">
+        <p class="footer__label">Studio</p>
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="footer__col">
+        <p class="footer__label">Contact</p>
+        <p>Austin Ratliff</p>
+        <a href="mailto:Austin.ratliff@foothillwebstudios.com">Austin.ratliff@foothillwebstudios.com</a>
+        <a href="tel:+19168991602">(916) 899-1602</a>
+        <p class="footer__addr">Sacramento &amp; Placer County, CA</p>
+      </div>
+
+      <div class="footer__bar">
+        <p>&copy; 2026 Foothill Web Studio</p>
+        <p>
+          <!-- Owner-only, unlisted link. Not shown in nav. Passphrase-gated. -->
+          <a href="./studio/index.html" class="footer__owner" rel="nofollow" title="Studio operations (owner-only)">Studio ops</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
